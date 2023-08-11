@@ -1,5 +1,6 @@
 package com.rafengimprove.hotel.management.system.common.model.entity
 
+import com.rafengimprove.hotel.management.system.common.model.dto.Client
 import com.rafengimprove.hotel.management.system.common.model.dto.HistoryRecord
 import com.rafengimprove.hotel.management.system.common.model.type.BehaviourType
 import jakarta.persistence.*
@@ -53,9 +54,9 @@ class HistoryRecordEntity {
     lateinit var additionalService: List<ServiceEntity>
 }
 
-fun HistoryRecordEntity.toDto() = HistoryRecord(
+fun HistoryRecordEntity.toDto(clintDto: Client? = null) = HistoryRecord(
     id,
-    client.toDto(),
+    clintDto ?: client.toDto(),
     apartmentPaymentId,
     apartmentId, behaviour,
     people.map { it.toDto() },

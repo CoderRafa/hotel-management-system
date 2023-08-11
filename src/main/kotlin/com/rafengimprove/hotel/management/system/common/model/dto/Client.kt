@@ -9,8 +9,8 @@ data class Client(
     val passportNumber: String,
     val phoneNumber: String,
     val email: String,
-    val history: List<HistoryRecord>,
-    val guestHistory: List<HistoryRecord>,
+    val history: MutableList<HistoryRecord>,
+    val guestHistory: MutableList<HistoryRecord>,
     val rating: Int
 )
 

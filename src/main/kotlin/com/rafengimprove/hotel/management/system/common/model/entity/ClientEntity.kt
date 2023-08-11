@@ -41,14 +41,19 @@ class ClientEntity {
     var rating: Int = 0
 }
 
-fun ClientEntity.toDto() = Client(
-    clientId,
-    name,
-    lastname,
-    passportNumber,
-    phoneNumber,
-    email,
-    history.map(HistoryRecordEntity::toDto),
-    guestHistory.map(HistoryRecordEntity::toDto),
-    rating
-)
+fun ClientEntity.toDto(): Client {
+    val client = Client(
+        clientId,
+        name,
+        lastname,
+        passportNumber,
+        phoneNumber,
+        email,
+        mutableListOf(),
+        mutableListOf(),
+        rating
+    )
+    client.history.addAll(history.map { it.toDto(client) })
+    client.guestHistory.addAll(guestHistory.map { it.toDto(client) })
+    return client
+}

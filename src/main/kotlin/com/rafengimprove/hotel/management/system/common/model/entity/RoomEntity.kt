@@ -2,7 +2,6 @@ package com.rafengimprove.hotel.management.system.common.model.entity
 
 import com.rafengimprove.hotel.management.system.common.model.dto.Room
 import com.rafengimprove.hotel.management.system.common.model.type.*
-import com.rafengimprove.hotel.management.system.common.type.*
 import jakarta.persistence.*
 
 @Entity(name = "room")

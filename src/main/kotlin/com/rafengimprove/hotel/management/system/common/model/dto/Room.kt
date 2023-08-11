@@ -2,7 +2,6 @@ package com.rafengimprove.hotel.management.system.common.model.dto
 
 import com.rafengimprove.hotel.management.system.common.model.entity.RoomEntity
 import com.rafengimprove.hotel.management.system.common.model.type.*
-import com.rafengimprove.hotel.management.system.common.type.*
 
 data class Room (
     var roomId: Long? = null,
