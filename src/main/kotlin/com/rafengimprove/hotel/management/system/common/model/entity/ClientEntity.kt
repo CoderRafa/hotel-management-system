@@ -34,9 +34,6 @@ class ClientEntity {
     @OneToMany(mappedBy = "client")
     lateinit var history: List<HistoryRecordEntity>
 
-    @ManyToMany(mappedBy = "people")
-    lateinit var guestHistory: List<HistoryRecordEntity>
-
     @Column(name = "rating", nullable = false)
     var rating: Int = 0
 }
@@ -54,6 +51,5 @@ fun ClientEntity.toDto(): Client {
         rating
     )
     client.history.addAll(history.map { it.toDto(client) })
-    client.guestHistory.addAll(guestHistory.map { it.toDto(client) })
     return client
 }

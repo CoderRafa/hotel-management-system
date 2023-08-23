@@ -11,7 +11,6 @@ data class HistoryRecord(
     val apartmentPaymentID: Long? = null,
     val apartmentID: Long? = null,
     val behaviour: BehaviourType,
-    val people: List<Client>,
     val checkInDateAndTime: LocalDateTime,
     val checkOutDateAndTime: LocalDateTime,
     val lateCheckIn: Boolean,
@@ -19,20 +18,23 @@ data class HistoryRecord(
     val additionalService: List<Service>
 )
 
-fun HistoryRecord.toEntity(clientEntity: ClientEntity?) = HistoryRecordEntity().apply {
-    this.historyRecordId = this@toEntity.historyRecordID
-    if(client != null) {
-        this.client = clientEntity!!
-    }else{
-        this.client = this@toEntity.client.toEntity()
+fun HistoryRecord.toEntity(clientEntity: ClientEntity? = null): HistoryRecordEntity {
+    val historyRecordEntity = HistoryRecordEntity()
+    historyRecordEntity.apply {
+        this.historyRecordId = this@toEntity.historyRecordID
+        if(clientEntity != null) {
+            this.client = clientEntity
+        } else{
+            this.client = this@toEntity.client.toEntity(historyRecordEntity)
+        }
+        this.apartmentPaymentId = this@toEntity.apartmentPaymentID
+        this.apartmentId = this@toEntity.apartmentID
+        this.behaviour = this@toEntity.behaviour
+        this.checkInDateAndTime = this@toEntity.checkInDateAndTime
+        this.checkOutDateAndTime = this@toEntity.checkOutDateAndTime
+        this.lateCheckIn = this@toEntity.lateCheckIn
+        this.lateCheckOut = this@toEntity.lateCheckOut
+        this.additionalService = this@toEntity.additionalService.map { it.toEntity() }
     }
-    this.apartmentPaymentId = this@toEntity.apartmentPaymentID
-    this.apartmentId = this@toEntity.apartmentID
-    this.behaviour = this@toEntity.behaviour
-    this.people = this@toEntity.people.map { it.toEntity() }
-    this.checkInDateAndTime = this@toEntity.checkInDateAndTime
-    this.checkOutDateAndTime = this@toEntity.checkOutDateAndTime
-    this.lateCheckIn = this@toEntity.lateCheckIn
-    this.lateCheckOut = this@toEntity.lateCheckOut
-    this.additionalService = this@toEntity.additionalService.map { it.toEntity() }
+    return historyRecordEntity
 }

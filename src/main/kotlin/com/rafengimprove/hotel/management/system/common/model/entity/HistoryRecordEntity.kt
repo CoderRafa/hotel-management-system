@@ -30,14 +30,6 @@ class HistoryRecordEntity {
     @Column(name = "behaviour", nullable = false)
     lateinit var behaviour: BehaviourType
 
-    @ManyToMany(cascade = [CascadeType.ALL])
-    @JoinTable(
-        name = "history_record_to_client",
-        joinColumns = [JoinColumn(name = "history_record_id")],
-        inverseJoinColumns = [JoinColumn(name = "client_id")]
-    )
-    lateinit var people: List<ClientEntity>
-
     @Column(name = "check_in_date_and_time", nullable = false)
     lateinit var checkInDateAndTime: LocalDateTime
 
@@ -59,7 +51,6 @@ fun HistoryRecordEntity.toDto(clientDto: Client? = null) = HistoryRecord(
     clientDto ?: client.toDto(),
     apartmentPaymentId,
     apartmentId, behaviour,
-    people.map { it.toDto() },
     checkInDateAndTime,
     checkOutDateAndTime,
     lateCheckIn,
