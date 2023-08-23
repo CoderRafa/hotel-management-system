@@ -10,13 +10,13 @@ import java.time.LocalDateTime
 class HistoryRecordEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "history_record_sequence")
-    @Column(name = "id", nullable = false)
-    var id: Long? = null
+    @Column(name = "history_record_id", nullable = false)
+    var historyRecordId: Long? = null
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumns(
-        JoinColumn(name = "history_record_id", referencedColumnName = "id"),
-        JoinColumn(name = "client", referencedColumnName = "client")
+        JoinColumn(name = "history_record_id", referencedColumnName = "history_record_id"),
+        JoinColumn(name = "client_id", referencedColumnName = "client_id")
     )
     lateinit var client: ClientEntity
 
@@ -54,9 +54,9 @@ class HistoryRecordEntity {
     lateinit var additionalService: List<ServiceEntity>
 }
 
-fun HistoryRecordEntity.toDto(clintDto: Client? = null) = HistoryRecord(
-    id,
-    clintDto ?: client.toDto(),
+fun HistoryRecordEntity.toDto(clientDto: Client? = null) = HistoryRecord(
+    historyRecordId,
+    clientDto ?: client.toDto(),
     apartmentPaymentId,
     apartmentId, behaviour,
     people.map { it.toDto() },

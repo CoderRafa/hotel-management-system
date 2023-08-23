@@ -1,5 +1,6 @@
 package com.rafengimprove.hotel.management.system.common.model.dto
 
+import com.rafengimprove.hotel.management.system.common.model.entity.ClientEntity
 import com.rafengimprove.hotel.management.system.common.model.entity.HistoryRecordEntity
 import com.rafengimprove.hotel.management.system.common.model.type.BehaviourType
 import java.time.LocalDateTime
@@ -18,9 +19,13 @@ data class HistoryRecord(
     val additionalService: List<Service>
 )
 
-fun HistoryRecord.toEntity() = HistoryRecordEntity().apply {
-    this.id = this@toEntity.historyRecordID
-    this.client = this@toEntity.client.toEntity()
+fun HistoryRecord.toEntity(clientEntity: ClientEntity?) = HistoryRecordEntity().apply {
+    this.historyRecordId = this@toEntity.historyRecordID
+    if(client != null) {
+        this.client = clientEntity!!
+    }else{
+        this.client = this@toEntity.client.toEntity()
+    }
     this.apartmentPaymentId = this@toEntity.apartmentPaymentID
     this.apartmentId = this@toEntity.apartmentID
     this.behaviour = this@toEntity.behaviour

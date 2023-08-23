@@ -13,7 +13,7 @@ import jakarta.persistence.OneToMany
 class ClientEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "client_sequence")
-    @Column(name = "id", nullable = false)
+    @Column(name = "client_id", nullable = false)
     var clientId: Long? = null
 
     @Column(name = "name", nullable = false)
