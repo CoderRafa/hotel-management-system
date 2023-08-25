@@ -1,16 +1,13 @@
 package com.rafengimprove.hotel.management.toentity
 
 import com.rafengimprove.hotel.management.common.randomRoom
-import com.rafengimprove.hotel.management.system.model.dto.Apartment
 import com.rafengimprove.hotel.management.system.model.dto.toEntity
-import com.rafengimprove.hotel.management.system.common.model.entity.toDto
-import com.rafengimprove.hotel.management.system.common.model.type.RenovationType.NEWLY_FURNISHED
+import com.rafengimprove.hotel.management.system.model.entity.toDto
+import com.rafengimprove.hotel.management.system.model.type.RenovationType.NEWLY_FURNISHED
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.RepeatedTest
-import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.extension.ExtendWith
 import org.mockito.junit.jupiter.MockitoExtension
-import kotlin.random.Random
 import kotlin.random.Random.Default.nextBoolean
 import kotlin.random.Random.Default.nextInt
 

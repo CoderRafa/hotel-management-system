@@ -1,8 +1,9 @@
 package com.rafengimprove.hotel.management.system.model.dto
 
-import com.rafengimprove.hotel.management.system.common.model.entity.ApartmentEntity
-import com.rafengimprove.hotel.management.system.common.model.type.RenovationType
-import com.rafengimprove.hotel.management.system.common.model.type.ViewType.SEA_VIEW
+import com.rafengimprove.hotel.management.system.model.entity.ApartmentEntity
+import com.rafengimprove.hotel.management.system.model.type.RenovationType
+import com.rafengimprove.hotel.management.system.model.type.ViewType
+
 
 data class Apartment(
     val apartmentId: Long? = null,
@@ -16,7 +17,7 @@ data class Apartment(
     val floor: Int
 ) {
     val hasSeaView: Boolean by lazy {
-        rooms.any { it.viewType == SEA_VIEW }
+        rooms.any { it.viewType == ViewType.SEA_VIEW }
     }
 
     val apartmentArea: Double by lazy {
