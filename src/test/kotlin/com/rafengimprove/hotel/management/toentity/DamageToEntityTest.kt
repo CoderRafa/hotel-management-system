@@ -1,7 +1,7 @@
 package com.rafengimprove.hotel.management.toentity
 
 import com.rafengimprove.hotel.management.system.common.model.dto.Damage
-import com.rafengimprove.hotel.management.system.common.model.dto.toEntity
+import com.rafengimprove.hotel.management.system.model.dto.toEntity
 import com.rafengimprove.hotel.management.system.common.model.type.DamageType.ROOM_DAMAGE
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test

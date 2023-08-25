@@ -1,7 +1,7 @@
 package com.rafengimprove.hotel.management.toentity
 
 import com.rafengimprove.hotel.management.system.common.model.dto.Transaction
-import com.rafengimprove.hotel.management.system.common.model.dto.toEntity
+import com.rafengimprove.hotel.management.system.model.dto.toEntity
 import com.rafengimprove.hotel.management.system.common.model.type.CurrencyType.USD
 import com.rafengimprove.hotel.management.system.common.model.type.PaymentType.TRANSFER
 import com.rafengimprove.hotel.management.system.common.model.type.TransactionStatusType.APPROVED

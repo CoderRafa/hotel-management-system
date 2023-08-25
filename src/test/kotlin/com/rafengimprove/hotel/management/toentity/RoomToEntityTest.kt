@@ -1,31 +1,23 @@
 package com.rafengimprove.hotel.management.toentity
 
-import com.rafengimprove.hotel.management.system.common.model.dto.Room
-import com.rafengimprove.hotel.management.system.common.model.dto.toEntity
-import com.rafengimprove.hotel.management.system.common.model.type.EquipmentType.TV
-import com.rafengimprove.hotel.management.system.common.model.type.FurnitureType.DOUBLE_BED
-import com.rafengimprove.hotel.management.system.common.model.type.RoomType.BEDROOM
-import com.rafengimprove.hotel.management.system.common.model.type.ViewType.SEA_VIEW
-import com.rafengimprove.hotel.management.system.common.model.type.WindowType.FIXED_WINDOW
+import com.rafengimprove.hotel.management.common.randomRoom
+import com.rafengimprove.hotel.management.system.model.dto.toEntity
 import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.RepeatedTest
 import org.junit.jupiter.api.Test
+import org.junit.jupiter.api.extension.ExtendWith
+import org.mockito.junit.jupiter.MockitoExtension
 
-val room = Room(
-    null,
-    BEDROOM,
-    10.0,
-    listOf(FIXED_WINDOW),
-    SEA_VIEW,
-    listOf(DOUBLE_BED),
-    listOf(TV),
-    true
-)
+
+@ExtendWith(MockitoExtension::class)
 class RoomTest {
 
-    val roomEntity = room.toEntity()
-
-    @Test
+    @RepeatedTest(15)
     fun `Happy pass - room toEntity works`() {
+
+        val room = randomRoom()
+        val roomEntity = room.toEntity()
+
         assertEquals(room.roomId, roomEntity.roomId)
         assertEquals(room.roomType, roomEntity.roomType)
         assertEquals(room.roomArea, roomEntity.roomArea)
