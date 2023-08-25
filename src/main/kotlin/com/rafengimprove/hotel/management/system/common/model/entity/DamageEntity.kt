@@ -9,7 +9,7 @@ class DamageEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "damage_sequence")
     @Column(name = "id", nullable = false)
-    var id: Long? = null
+    var damageId: Long? = null
 
     @Enumerated(EnumType.STRING)
     @Column(name = "damage_type", nullable = false)
@@ -19,4 +19,4 @@ class DamageEntity {
     var cost: Double = 0.0
 }
 
-fun DamageEntity.toDto() = Damage(id, damageType, cost)
+fun DamageEntity.toDto() = Damage(damageId, damageType, cost)

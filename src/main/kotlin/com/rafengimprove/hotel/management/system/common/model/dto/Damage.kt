@@ -4,14 +4,14 @@ import com.rafengimprove.hotel.management.system.common.model.entity.DamageEntit
 import com.rafengimprove.hotel.management.system.common.model.type.DamageType
 
 data class Damage(
-    var damageID: Long? = null,
+    var damageId: Long? = null,
     val damageType: DamageType,
     val cost: Double
 )
 
-fun Damage.tEntity() = DamageEntity().apply {
-    this.id = this@tEntity.damageID
-    this.damageType = this@tEntity.damageType
-    this.cost = this@tEntity.cost
+fun Damage.toEntity() = DamageEntity().apply {
+    this.damageId = this@toEntity.damageId
+    this.damageType = this@toEntity.damageType
+    this.cost = this@toEntity.cost
 }
 
