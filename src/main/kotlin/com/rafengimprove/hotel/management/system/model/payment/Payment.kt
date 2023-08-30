@@ -1,8 +1,8 @@
 package com.rafengimprove.hotel.management.system.model.payment
 
-import com.rafengimprove.hotel.management.system.common.model.type.CurrencyType
-import com.rafengimprove.hotel.management.system.common.model.type.PaymentStatusType
-import com.rafengimprove.hotel.management.system.common.model.type.PaymentType
+import com.rafengimprove.hotel.management.system.model.type.CurrencyType
+import com.rafengimprove.hotel.management.system.model.type.PaymentStatusType
+import com.rafengimprove.hotel.management.system.model.type.PaymentType
 import java.time.LocalDate
 
 open class Payment(

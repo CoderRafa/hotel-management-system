@@ -1,10 +1,10 @@
 package com.rafengimprove.hotel.management.system.model.entity
 
-import com.rafengimprove.hotel.management.system.common.model.dto.Transaction
-import com.rafengimprove.hotel.management.system.common.model.type.CurrencyType
-import com.rafengimprove.hotel.management.system.common.model.type.PaymentType
-import com.rafengimprove.hotel.management.system.common.model.type.TransactionStatusType
-import com.rafengimprove.hotel.management.system.common.model.type.TransactionType
+import com.rafengimprove.hotel.management.system.model.dto.Transaction
+import com.rafengimprove.hotel.management.system.model.type.CurrencyType
+import com.rafengimprove.hotel.management.system.model.type.PaymentType
+import com.rafengimprove.hotel.management.system.model.type.TransactionStatusType
+import com.rafengimprove.hotel.management.system.model.type.TransactionType
 import jakarta.persistence.*
 import java.time.LocalDateTime
 

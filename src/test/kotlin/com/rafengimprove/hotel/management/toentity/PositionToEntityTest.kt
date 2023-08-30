@@ -1,21 +1,17 @@
 package com.rafengimprove.hotel.management.toentity
 
-import com.rafengimprove.hotel.management.system.common.model.dto.Position
+import com.rafengimprove.hotel.management.common.randomPosition
 import com.rafengimprove.hotel.management.system.model.dto.toEntity
 import org.junit.jupiter.api.Assertions.assertEquals
-import org.junit.jupiter.api.Test
+import org.junit.jupiter.api.RepeatedTest
 
 class PositionToEntityTest {
 
-    val position = Position(
-        null,
-        "Receptionist",
-        900.0
-    )
+    private val position = randomPosition()
 
-    val positionEntity = position.toEntity()
+    private val positionEntity = position.toEntity()
 
-    @Test
+    @RepeatedTest(15)
     fun `Happy pass - position toEntity works`() {
         assertEquals(position.positionId, positionEntity.positionId)
         assertEquals(position.name,positionEntity.name)

@@ -1,7 +1,7 @@
 package com.rafengimprove.hotel.management.system.model.entity
 
-import com.rafengimprove.hotel.management.system.common.model.dto.Damage
-import com.rafengimprove.hotel.management.system.common.model.type.DamageType
+import com.rafengimprove.hotel.management.system.model.dto.Damage
+import com.rafengimprove.hotel.management.system.model.type.DamageType
 import jakarta.persistence.*
 
 @Entity(name = "damage")

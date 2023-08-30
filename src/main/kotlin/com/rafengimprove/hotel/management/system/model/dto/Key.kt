@@ -1,6 +1,6 @@
 package com.rafengimprove.hotel.management.system.model.dto
 
-import com.rafengimprove.hotel.management.system.common.model.type.KeyStatusType
+import com.rafengimprove.hotel.management.system.model.type.KeyStatusType
 import java.time.LocalDate
 
 data class Key(

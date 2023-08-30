@@ -3,7 +3,7 @@ package com.rafengimprove.hotel.management.toentity
 import com.rafengimprove.hotel.management.common.randomRoom
 import com.rafengimprove.hotel.management.system.model.dto.toEntity
 import com.rafengimprove.hotel.management.system.model.entity.toDto
-import com.rafengimprove.hotel.management.system.model.type.RenovationType.NEWLY_FURNISHED
+import com.rafengimprove.hotel.management.system.model.type.RenovationType
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.RepeatedTest
 import org.junit.jupiter.api.extension.ExtendWith
@@ -36,7 +36,7 @@ class ApartmentToEntityTest {
         listOf(randomRoom()),
         nextBoolean(),
         nextBoolean(),
-        NEWLY_FURNISHED,
+        RenovationType.values().random(),
         nextBoolean(),
         nextBoolean(),
         nextInt(1, 7)

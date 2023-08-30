@@ -1,6 +1,6 @@
 package com.rafengimprove.hotel.management.system.model.dto
 
-import com.rafengimprove.hotel.management.system.common.model.entity.ServiceEntity
+import com.rafengimprove.hotel.management.system.model.entity.ServiceEntity
 
 data class Service(
     var serviceId: Long? = null,

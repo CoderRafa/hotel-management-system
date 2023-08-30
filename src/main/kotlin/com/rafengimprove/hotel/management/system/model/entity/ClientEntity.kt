@@ -1,6 +1,6 @@
 package com.rafengimprove.hotel.management.system.model.entity
 
-import com.rafengimprove.hotel.management.system.common.model.dto.Client
+import com.rafengimprove.hotel.management.system.model.dto.Client
 import jakarta.persistence.Column
 import jakarta.persistence.Entity
 import jakarta.persistence.GeneratedValue
@@ -46,7 +46,6 @@ fun ClientEntity.toDto(): Client {
         passportNumber,
         phoneNumber,
         email,
-        mutableListOf(),
         mutableListOf(),
         rating
     )

@@ -1,8 +1,8 @@
 package com.rafengimprove.hotel.management.system.model.entity
 
-import com.rafengimprove.hotel.management.system.common.model.dto.Client
-import com.rafengimprove.hotel.management.system.common.model.dto.HistoryRecord
-import com.rafengimprove.hotel.management.system.common.model.type.BehaviourType
+import com.rafengimprove.hotel.management.system.model.dto.Client
+import com.rafengimprove.hotel.management.system.model.dto.HistoryRecord
+import com.rafengimprove.hotel.management.system.model.type.BehaviourType
 import jakarta.persistence.*
 import java.time.LocalDateTime
 

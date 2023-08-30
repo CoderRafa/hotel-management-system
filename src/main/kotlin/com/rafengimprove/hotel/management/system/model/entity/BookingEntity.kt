@@ -1,10 +1,10 @@
 package com.rafengimprove.hotel.management.system.model.entity
 
-import com.rafengimprove.hotel.management.system.common.model.dto.Booking
-import com.rafengimprove.hotel.management.system.common.model.type.PaymentType
-import com.rafengimprove.hotel.management.system.common.model.type.SpecialRequestType
+import com.rafengimprove.hotel.management.system.model.dto.Booking
+import com.rafengimprove.hotel.management.system.model.type.PaymentType
+import com.rafengimprove.hotel.management.system.model.type.SpecialRequestType
 import jakarta.persistence.*
-import java.time.LocalDate
+import java.time.LocalDateTime
 
 @Entity(name = "booking")
 class BookingEntity {
@@ -13,22 +13,17 @@ class BookingEntity {
     @Column(name = "id", nullable = false)
     var bookingId: Long? = null
 
+    @Column(name = "apartmentId")
+    var apartmentId: Long? = null
+
     @OneToOne(mappedBy = "booking")
     lateinit var client: ClientEntity
 
     @Column(name = "check_in_date", nullable = false)
-    lateinit var checkInDate: LocalDate
+    lateinit var checkInDate: LocalDateTime
 
     @Column(name = "check_out_date", nullable = false)
-    lateinit var checkOutDate: LocalDate
-
-    @ManyToMany(cascade = [CascadeType.ALL], fetch = FetchType.LAZY)
-    @JoinTable(
-        name = "booking_to_client",
-        joinColumns = [JoinColumn(name = "booking_id")],
-        inverseJoinColumns = [JoinColumn(name = "client_id")]
-    )
-    lateinit var people: List<ClientEntity>
+    lateinit var checkOutDate: LocalDateTime
 
     @Enumerated(EnumType.STRING)
     @Column(name = "payment_type", nullable = false)
@@ -43,10 +38,10 @@ class BookingEntity {
 
 fun BookingEntity.toDto() = Booking(
     bookingId,
+    apartmentId,
     client.toDto(),
     checkInDate,
     checkOutDate,
-    people.map(ClientEntity::toDto),
     paymentType,
     specialRequests.convertToType { SpecialRequestType.valueOf(it) },
     promocode

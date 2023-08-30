@@ -1,27 +1,32 @@
 package com.rafengimprove.hotel.management.toDto
 
-import com.rafengimprove.hotel.management.system.common.model.entity.DamageEntity
-import com.rafengimprove.hotel.management.system.common.model.entity.toDto
-import com.rafengimprove.hotel.management.system.common.model.type.DamageType.ROOM_DAMAGE
+import com.rafengimprove.hotel.management.system.model.entity.DamageEntity
+import com.rafengimprove.hotel.management.system.model.entity.toDto
+import com.rafengimprove.hotel.management.system.model.type.DamageType
+import com.rafengimprove.hotel.management.system.model.type.DamageType.ROOM_DAMAGE
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Assertions.*
+import org.junit.jupiter.api.RepeatedTest
 import org.junit.jupiter.api.Test
+import kotlin.random.Random.Default.nextDouble
 
 class DamageEntityToDtoTest {
 
-    val damageEntity = DamageEntity().apply {
-        damageId = null
-        damageType = ROOM_DAMAGE
-        cost = 150.0
-    }
+    val damageEntity = randomDamageEntity()
 
     val damage = damageEntity.toDto()
 
-    @Test
+    @RepeatedTest(15)
     fun `Happy pass - damage toDto works`() {
 
         assertEquals(null, damage.damageId)
-        assertEquals(ROOM_DAMAGE, damage.damageType)
-        assertEquals(150.0, damage.cost)
+        assertEquals(damageEntity.damageType, damage.damageType)
+        assertEquals(damageEntity.cost, damage.cost)
+    }
+
+    private fun randomDamageEntity() = DamageEntity().apply {
+        damageId = null
+        damageType = DamageType.values().random()
+        cost = nextDouble()
     }
 }

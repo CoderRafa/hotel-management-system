@@ -1,29 +1,22 @@
 package com.rafengimprove.hotel.management.toentity
 
-import com.rafengimprove.hotel.management.system.common.model.dto.Transaction
+import com.rafengimprove.hotel.management.system.model.dto.Transaction
 import com.rafengimprove.hotel.management.system.model.dto.toEntity
-import com.rafengimprove.hotel.management.system.common.model.type.CurrencyType.USD
-import com.rafengimprove.hotel.management.system.common.model.type.PaymentType.TRANSFER
-import com.rafengimprove.hotel.management.system.common.model.type.TransactionStatusType.APPROVED
-import com.rafengimprove.hotel.management.system.common.model.type.TransactionType.REGULAR
+import com.rafengimprove.hotel.management.system.model.type.CurrencyType
+import com.rafengimprove.hotel.management.system.model.type.PaymentType
+import com.rafengimprove.hotel.management.system.model.type.TransactionStatusType
+import com.rafengimprove.hotel.management.system.model.type.TransactionType
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 import java.time.LocalDateTime
+import kotlin.random.Random.Default.nextDouble
+import kotlin.random.Random.Default.nextLong
 
-class TransactionToEntityTest() {
+class TransactionToEntityTest {
 
-    val transaction = Transaction(
-        null,
-        REGULAR,
-        TRANSFER,
-        LocalDateTime.now(),
-        LocalDateTime.now(),
-        USD,
-        150.0,
-        APPROVED
-    )
+    private val transaction = randomTransaction()
 
-    val transactionEntity = transaction.toEntity()
+    private val transactionEntity = transaction.toEntity()
 
     @Test
     fun `Happy pass - transaction toEntity works`() {
@@ -38,4 +31,15 @@ class TransactionToEntityTest() {
 
 
     }
+
+    private fun randomTransaction() = Transaction(
+        nextLong(),
+        TransactionType.values().random(),
+        PaymentType.values().random(),
+        LocalDateTime.now(),
+        LocalDateTime.now(),
+        CurrencyType.values().random(),
+        nextDouble(),
+        TransactionStatusType.values().random()
+    )
 }

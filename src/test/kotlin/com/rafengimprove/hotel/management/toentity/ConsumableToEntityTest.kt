@@ -1,26 +1,30 @@
 package com.rafengimprove.hotel.management.toentity
 
-import com.rafengimprove.hotel.management.system.common.model.dto.Consumable
+import com.rafengimprove.hotel.management.system.model.dto.Consumable
 import com.rafengimprove.hotel.management.system.model.dto.toEntity
 import org.junit.jupiter.api.Assertions.*
-import org.junit.jupiter.api.Test
+import org.junit.jupiter.api.RepeatedTest
+import kotlin.random.Random.Default.nextDouble
+import kotlin.random.Random.Default.nextInt
 
 class ConsumableToEntityTest {
 
-    val consumable = Consumable(
-        null,
-        "Wine glass",
-        20.0,
-        10
-    )
+    private val consumable = randomConsumable()
 
-    val consumableEntity = consumable.toEntity()
+    private val consumableEntity = consumable.toEntity()
 
-    @Test
+    @RepeatedTest(15)
     fun `Happy pass - consumable toEntity works`() {
         assertEquals(consumable.consumableId, consumableEntity.consumableId)
         assertEquals(consumable.name, consumableEntity.name)
         assertEquals(consumable.cost, consumableEntity.cost)
         assertEquals(consumable.amount, consumableEntity.amount)
     }
+
+    private fun randomConsumable() = Consumable(
+        null,
+        "Wine glass",
+        nextDouble(),
+        nextInt()
+    )
 }

@@ -1,23 +1,18 @@
 package com.rafengimprove.hotel.management.toentity
 
-import com.rafengimprove.hotel.management.system.common.model.dto.Service
+import com.rafengimprove.hotel.management.common.randomService
 import com.rafengimprove.hotel.management.system.model.dto.toEntity
 import org.junit.jupiter.api.Assertions.assertEquals
-import org.junit.jupiter.api.Test
+import org.junit.jupiter.api.RepeatedTest
 
 
-val service = Service(
-    null,
-    "Transfer",
-    25.0,
-    1
-)
+val service = randomService()
 
 class ServiceTest {
 
-    val serviceEntity = service.toEntity()
+    private val serviceEntity = service.toEntity()
 
-    @Test
+    @RepeatedTest(15)
     fun `Happy pass - service toEntity works`() {
         assertEquals(service.serviceId, serviceEntity.serviceId)
         assertEquals(service.serviceName, serviceEntity.serviceName)

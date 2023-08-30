@@ -1,6 +1,6 @@
 package com.rafengimprove.hotel.management.system.model.dto
 
-import com.rafengimprove.hotel.management.system.common.model.entity.ServiceOrderEntity
+import com.rafengimprove.hotel.management.system.model.entity.ServiceOrderEntity
 import java.time.LocalDateTime
 
 data class ServiceOrder(

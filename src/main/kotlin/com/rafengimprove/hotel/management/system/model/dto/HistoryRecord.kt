@@ -6,10 +6,10 @@ import com.rafengimprove.hotel.management.system.model.type.BehaviourType
 import java.time.LocalDateTime
 
 data class HistoryRecord(
-    val historyRecordID: Long? = null,
+    val historyRecordId: Long? = null,
     val client: Client,
-    val apartmentPaymentID: Long? = null,
-    val apartmentID: Long? = null,
+    val apartmentPaymentId: Long? = null,
+    val apartmentId: Long? = null,
     val behaviour: BehaviourType,
     val checkInDateAndTime: LocalDateTime,
     val checkOutDateAndTime: LocalDateTime,
@@ -21,14 +21,14 @@ data class HistoryRecord(
 fun HistoryRecord.toEntity(clientEntity: ClientEntity? = null): HistoryRecordEntity {
     val historyRecordEntity = HistoryRecordEntity()
     historyRecordEntity.apply {
-        this.historyRecordId = this@toEntity.historyRecordID
+        this.historyRecordId = this@toEntity.historyRecordId
         if(clientEntity != null) {
             this.client = clientEntity
         } else{
             this.client = this@toEntity.client.toEntity(historyRecordEntity)
         }
-        this.apartmentPaymentId = this@toEntity.apartmentPaymentID
-        this.apartmentId = this@toEntity.apartmentID
+        this.apartmentPaymentId = this@toEntity.apartmentPaymentId
+        this.apartmentId = this@toEntity.apartmentId
         this.behaviour = this@toEntity.behaviour
         this.checkInDateAndTime = this@toEntity.checkInDateAndTime
         this.checkOutDateAndTime = this@toEntity.checkOutDateAndTime

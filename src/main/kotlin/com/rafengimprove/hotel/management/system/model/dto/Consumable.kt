@@ -1,6 +1,6 @@
 package com.rafengimprove.hotel.management.system.model.dto
 
-import com.rafengimprove.hotel.management.system.common.model.entity.ConsumableEntity
+import com.rafengimprove.hotel.management.system.model.entity.ConsumableEntity
 
 data class Consumable(
     val consumableId: Long? = null,

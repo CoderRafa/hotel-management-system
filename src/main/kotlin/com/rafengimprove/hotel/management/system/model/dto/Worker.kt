@@ -1,6 +1,6 @@
 package com.rafengimprove.hotel.management.system.model.dto
 
-import com.rafengimprove.hotel.management.system.common.model.entity.WorkerEntity
+import com.rafengimprove.hotel.management.system.model.entity.WorkerEntity
 import java.time.LocalDate
 
 data class Worker(
@@ -21,7 +21,7 @@ fun Worker.toEntity() = WorkerEntity().apply {
     this.workerId = this@toEntity.workerId
     this.name = this@toEntity.name
     this.lastname = this@toEntity.lastname
-    this.socialtNumber = this@toEntity.socialNumber
+    this.socialNumber = this@toEntity.socialNumber
     this.passportNumber = this@toEntity.passportNumber
     this.phoneNumber = this@toEntity.phoneNumber
     this.address = this@toEntity.address

@@ -29,6 +29,7 @@ fun Client.toEntity(historyRecordEntity: HistoryRecordEntity? = null): ClientEnt
         } else {
             this@toEntity.history.map { it.toEntity() }
         }
+        this.rating = this@toEntity.rating
     }
     return clientEntity
 }

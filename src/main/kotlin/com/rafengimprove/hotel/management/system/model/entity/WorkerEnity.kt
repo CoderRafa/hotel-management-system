@@ -1,6 +1,6 @@
 package com.rafengimprove.hotel.management.system.model.entity
 
-import com.rafengimprove.hotel.management.system.common.model.dto.Worker
+import com.rafengimprove.hotel.management.system.model.dto.Worker
 import jakarta.persistence.*
 import java.time.LocalDate
 
@@ -18,7 +18,7 @@ class WorkerEntity {
     lateinit var lastname: String
 
     @Column(name = "social_number", nullable = false)
-    lateinit var socialtNumber: String
+    lateinit var socialNumber: String
 
     @Column(name = "passport_number", nullable = false)
     lateinit var passportNumber: String
@@ -46,7 +46,7 @@ fun WorkerEntity.toDto() = Worker(
     workerId,
     name,
     lastname,
-    socialtNumber,
+    socialNumber,
     passportNumber,
     phoneNumber,
     address,

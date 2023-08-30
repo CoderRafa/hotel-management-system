@@ -1,6 +1,6 @@
 package com.rafengimprove.hotel.management.system.model.entity
 
-import com.rafengimprove.hotel.management.system.common.model.dto.Position
+import com.rafengimprove.hotel.management.system.model.dto.Position
 import jakarta.persistence.*
 
 @Entity(name = "position")

@@ -1,7 +1,7 @@
 package com.rafengimprove.hotel.management.system.model.dto
 
-import com.rafengimprove.hotel.management.system.common.model.entity.DamageEntity
-import com.rafengimprove.hotel.management.system.common.model.type.DamageType
+import com.rafengimprove.hotel.management.system.model.entity.DamageEntity
+import com.rafengimprove.hotel.management.system.model.type.DamageType
 
 data class Damage(
     var damageId: Long? = null,

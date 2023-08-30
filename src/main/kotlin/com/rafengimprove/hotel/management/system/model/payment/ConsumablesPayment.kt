@@ -1,10 +1,10 @@
 package com.rafengimprove.hotel.management.system.model.payment
 
-import com.rafengimprove.hotel.management.system.common.model.dto.Consumable
-import com.rafengimprove.hotel.management.system.common.model.entity.ConsumablesPaymentEntity
-import com.rafengimprove.hotel.management.system.common.model.type.CurrencyType
-import com.rafengimprove.hotel.management.system.common.model.type.PaymentStatusType
-import com.rafengimprove.hotel.management.system.common.model.type.PaymentType
+import com.rafengimprove.hotel.management.system.model.dto.Consumable
+import com.rafengimprove.hotel.management.system.model.entity.ConsumablesPaymentEntity
+import com.rafengimprove.hotel.management.system.model.type.CurrencyType
+import com.rafengimprove.hotel.management.system.model.type.PaymentStatusType
+import com.rafengimprove.hotel.management.system.model.type.PaymentType
 import com.rafengimprove.hotel.management.system.model.dto.toEntity
 import java.time.LocalDate
 

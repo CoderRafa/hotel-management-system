@@ -1,7 +1,6 @@
 package com.rafengimprove.hotel.management.system.model.entity
 
-import com.rafengimprove.hotel.management.system.model.dto.Apartment
-import com.rafengimprove.hotel.management.system.common.model.type.RenovationType
+import com.rafengimprove.hotel.management.system.model.type.RenovationType
 import jakarta.persistence.*
 
 @Entity(name = "apartment")

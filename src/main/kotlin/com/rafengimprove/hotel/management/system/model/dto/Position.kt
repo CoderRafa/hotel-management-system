@@ -1,6 +1,6 @@
 package com.rafengimprove.hotel.management.system.model.dto
 
-import com.rafengimprove.hotel.management.system.common.model.entity.PositionEntity
+import com.rafengimprove.hotel.management.system.model.entity.PositionEntity
 
 data class Position(
     var positionId: Long? = null,

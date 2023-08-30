@@ -1,6 +1,6 @@
 package com.rafengimprove.hotel.management.system.model.dto
 
-import com.rafengimprove.hotel.management.system.common.model.type.CleaningStatusType
+import com.rafengimprove.hotel.management.system.model.type.CleaningStatusType
 import java.time.LocalDateTime
 
 data class Housekeeping (
