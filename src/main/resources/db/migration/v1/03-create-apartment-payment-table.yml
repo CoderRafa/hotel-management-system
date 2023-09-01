@@ -4,15 +4,19 @@
      changes:
        -  createTable:
             columns:
-              -  column:
-                   name:  id
-                   type:  BIGINT
-              -  column:
-                   name: create_date
-                   type: date
-              -  column:
-                   name: confirmed_date
-                   type: date
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_apartment_payment
+                  name:  id
+                  type:  BIGINT
+              - column:
+                  name: create_date
+                  type: date
+              - column:
+                  name: confirmed_date
+                  type: date
               - column:
                   name: amount
                   type: double

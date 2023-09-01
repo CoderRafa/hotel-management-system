@@ -5,6 +5,10 @@
        -  createTable:
             columns:
               -  column:
+                   constraints:
+                     nullable: false
+                     primaryKey: true
+                     primaryKeyName: pk_service
                    name:  id
                    type:  BIGINT
               -  column:

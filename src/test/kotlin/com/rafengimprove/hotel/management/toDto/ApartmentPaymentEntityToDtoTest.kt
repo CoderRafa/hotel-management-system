@@ -11,8 +11,8 @@ import org.mockito.junit.jupiter.MockitoExtension
 @ExtendWith(MockitoExtension::class)
 class ApartmentPaymentEntityToDtoTest {
 
-    private val apartmentPaymentEntity = randomApartmentPayment().toEntity()
-    private val apartmentPayment = apartmentPaymentEntity.toDto()
+    private val apartmentPayment = randomApartmentPayment()
+    private val apartmentPaymentEntity = apartmentPayment.toEntity()
 
     @RepeatedTest(15)
     fun `Happy pass - convert apartment payment to entity`() {
