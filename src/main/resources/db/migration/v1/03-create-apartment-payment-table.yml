@@ -1,40 +1,40 @@
--  changeSet:
-     id:  03-01
-     author:  Rafayel Khachatryan
-     changes:
-       -  createTable:
-            columns:
-              - column:
-                  constraints:
-                    nullable: false
-                    primaryKey: true
-                    primaryKeyName: pk_apartment_payment
-                  name:  id
-                  type:  BIGINT
-              - column:
-                  name: create_date
-                  type: date
-              - column:
-                  name: confirmed_date
-                  type: date
-              - column:
-                  name: amount
-                  type: double
-              - column:
-                  name: payment_type
-                  type: VARCHAR(10)
-              - column:
-                  name: currency
-                  type: VARCHAR(10)
-              - column:
-                  name: payment_status
-                  type: VARCHAR(10)
-              - column:
-                  name: room_id
-                  type: BIGINT
-              - column:
-                  name: client_id
-                  type: BIGINT
-            remarks:  This is my firs changeSet
-            schemaName:  public
-            tableName:  apartment_payment
+- changeSet:
+    id: 03-01
+    author: Rafayel Khachatryan
+    changes:
+      - createTable:
+          columns:
+            - column:
+                constraints:
+                  nullable: false
+                  primaryKey: true
+                  primaryKeyName: pk_apartment_payment
+                name: id
+                type: BIGINT
+            - column:
+                name: create_date
+                type: date
+            - column:
+                name: confirmed_date
+                type: date
+            - column:
+                name: amount
+                type: double
+            - column:
+                name: payment_type
+                type: VARCHAR(10)
+            - column:
+                name: currency
+                type: VARCHAR(10)
+            - column:
+                name: payment_status
+                type: VARCHAR(10)
+            - column:
+                name: room_id
+                type: BIGINT
+            - column:
+                name: client_id
+                type: BIGINT
+          remarks: This is my firs changeSet
+          schemaName: public
+          tableName: apartment_payment
