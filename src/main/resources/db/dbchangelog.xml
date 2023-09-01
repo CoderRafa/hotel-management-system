@@ -9,5 +9,6 @@
     <include file="migration/v1/03-create-apartment-payment-table.yml" relativeToChangelogFile="true"/>
     <include file="migration/v1/04-create-position-table.yml" relativeToChangelogFile="true"/>
     <include file="migration/v1/05-create-service-table.yml" relativeToChangelogFile="true"/>
+    <include file="db/migration/v1/01-damage.yaml"/>
 
 </databaseChangeLog>

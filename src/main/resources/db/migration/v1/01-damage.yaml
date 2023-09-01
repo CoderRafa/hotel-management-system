@@ -1,0 +1,36 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1693584609526-1
+      author: Kirill Iakimchuk
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createSequence:
+            incrementBy: 50
+            sequenceName: damage_sequence
+            startValue: 1
+  - changeSet:
+      id: 1693584609526-2
+      author: k.iakimchuk (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_damage
+                  name: id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: damage_type
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: cost
+                  type: DOUBLE
+            tableName: damage
+
