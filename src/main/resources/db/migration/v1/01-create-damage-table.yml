@@ -1,0 +1,18 @@
+-  changeSet:
+     id:  01-01
+     author:  Rafayel Khachatryan
+     changes:
+       -  createTable:
+            columns:
+              -  column:
+                   name:  id
+                   type:  BIGINT
+              -  column:
+                   name: damage_type
+                   type: varchar(100)
+              -  column:
+                   name: cost
+                   type: double
+            remarks:  This is my firs changeSet
+            schemaName:  public
+            tableName:  damage

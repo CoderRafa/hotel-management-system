@@ -1,13 +1,7 @@
 package com.rafengimprove.hotel.management.system.model.entity
 
 import com.rafengimprove.hotel.management.system.model.dto.Client
-import jakarta.persistence.Column
-import jakarta.persistence.Entity
-import jakarta.persistence.GeneratedValue
-import jakarta.persistence.GenerationType
-import jakarta.persistence.Id
-import jakarta.persistence.ManyToMany
-import jakarta.persistence.OneToMany
+import jakarta.persistence.*
 
 @Entity(name = "client")
 class ClientEntity {

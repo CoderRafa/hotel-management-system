@@ -16,11 +16,10 @@ class SalaryPayment(
     status: PaymentStatusType,
     val bonusAmount: Double,
     val penalties: Double,
-    val workerID: Long? = null,
+    val workerId: Long? = null,
 ) : Payment(
     paymentId, createdDate, confirmedDate, amount, paymentType, currency, status
-) {
-}
+)
 
 fun SalaryPayment.toEntity() = SalaryPaymentEntity().apply {
     this.paymentId = this@toEntity.paymentId
@@ -32,6 +31,6 @@ fun SalaryPayment.toEntity() = SalaryPaymentEntity().apply {
     this.paymentStatus = this@toEntity.status
     this.bonusAmount = this@toEntity.bonusAmount
     this.penalties = this@toEntity.penalties
-    this.workerId = this@toEntity.workerID
+    this.workerId = this@toEntity.workerId
 }
 

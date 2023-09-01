@@ -4,14 +4,16 @@ import com.rafengimprove.hotel.management.system.model.entity.ConsumableEntity
 import com.rafengimprove.hotel.management.system.model.entity.toDto
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.RepeatedTest
-import org.junit.jupiter.api.Test
+import org.junit.jupiter.api.extension.ExtendWith
+import org.mockito.junit.jupiter.MockitoExtension
 import kotlin.random.Random.Default.nextDouble
 import kotlin.random.Random.Default.nextInt
 
+@ExtendWith(MockitoExtension::class)
 class ConsumableEntityToDtoTest {
 
-    val consumableEntity = randomConsumableEntity()
-    val consumable = consumableEntity.toDto()
+    private val consumableEntity = randomConsumableEntity()
+    private val consumable = consumableEntity.toDto()
 
     @RepeatedTest(15)
     fun `Happy pass - consumable toDto works`() {

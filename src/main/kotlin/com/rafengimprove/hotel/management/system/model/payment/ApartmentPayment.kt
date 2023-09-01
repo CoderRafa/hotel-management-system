@@ -14,12 +14,11 @@ class ApartmentPayment(
     paymentType: PaymentType,
     currency: CurrencyType,
     status: PaymentStatusType,
-    val roomID: Long? = null,
-    val clientID: Long? = null
+    val roomId: Long? = null,
+    val clientId: Long? = null
 ) : Payment(
     paymentId, createdDate, confirmedDate, amount, paymentType, currency, status
-) {
-}
+)
 
 fun ApartmentPayment.toEntity() = ApartmentPaymentEntity().apply {
     this.paymentId = this@toEntity.paymentId
@@ -29,6 +28,6 @@ fun ApartmentPayment.toEntity() = ApartmentPaymentEntity().apply {
     this.paymentType = this@toEntity.paymentType
     this.currency = this@toEntity.currency
     this.paymentStatus = this@toEntity.status
-    this.roomId = this@toEntity.roomID
-    this.clientId = this@toEntity.clientID
+    this.roomId = this@toEntity.roomId
+    this.clientId = this@toEntity.clientId
 }

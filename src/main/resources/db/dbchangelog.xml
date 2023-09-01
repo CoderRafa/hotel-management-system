@@ -1,0 +1,13 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd"
+        objectQuotingStrategy="QUOTE_ONLY_RESERVED_WORDS">
+
+    <include file="migration/v1/01-create-damage-table.yml" relativeToChangelogFile="true"/>
+    <include file="migration/v1/02-create-consumable-table.yml" relativeToChangelogFile="true"/>
+    <include file="migration/v1/03-create-apartment-payment-table.yml" relativeToChangelogFile="true"/>
+    <include file="migration/v1/04-create-position-table.yml" relativeToChangelogFile="true"/>
+    <include file="migration/v1/05-create-service-table.yml" relativeToChangelogFile="true"/>
+
+</databaseChangeLog>

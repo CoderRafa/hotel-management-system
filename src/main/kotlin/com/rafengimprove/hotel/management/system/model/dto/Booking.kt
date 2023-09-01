@@ -3,7 +3,6 @@ package com.rafengimprove.hotel.management.system.model.dto
 import com.rafengimprove.hotel.management.system.model.entity.BookingEntity
 import com.rafengimprove.hotel.management.system.model.type.PaymentType
 import com.rafengimprove.hotel.management.system.model.type.SpecialRequestType
-import java.time.LocalDate
 import java.time.LocalDateTime
 
 data class Booking(

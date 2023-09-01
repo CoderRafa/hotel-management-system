@@ -7,18 +7,20 @@ import com.rafengimprove.hotel.management.system.model.entity.BookingEntity
 import com.rafengimprove.hotel.management.system.model.entity.toDto
 import com.rafengimprove.hotel.management.system.model.type.PaymentType
 import com.rafengimprove.hotel.management.system.model.type.SpecialRequestType
-import org.junit.jupiter.api.Assertions
-import org.junit.jupiter.api.Assertions.*
-import org.junit.jupiter.api.Test
+import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.RepeatedTest
+import org.junit.jupiter.api.extension.ExtendWith
+import org.mockito.junit.jupiter.MockitoExtension
 import java.time.LocalDateTime
 import kotlin.random.Random.Default.nextLong
 
+@ExtendWith(MockitoExtension::class)
 class BookingEntityToDtoTest {
 
     private val bookingEntity = randomBookingEntity()
     private val booking = bookingEntity.toDto()
 
-    @Test
+    @RepeatedTest(15)
     fun `Happy pass - convert bookingEntity to Dto`() {
         assertEquals(bookingEntity.bookingId, booking.bookingId)
         assertEquals(bookingEntity.apartmentId, booking.apartmentId)
@@ -31,13 +33,13 @@ class BookingEntityToDtoTest {
     }
 
     private fun randomBookingEntity() = BookingEntity().apply {
-       this.bookingId = nextLong()
-       this.apartmentId = nextLong()
-       this.client = randomClient().toEntity()
-       this.checkInDate = LocalDateTime.now()
-       this.checkOutDate = LocalDateTime.now()
-       this.paymentType = PaymentType.values().random()
-       this.specialRequests = listOf(SpecialRequestType.values().random()).sorted().joinToString(separator = ",")
-       this.promocode = generateRandomLowerCaseLetterString(7)
+        this.bookingId = nextLong()
+        this.apartmentId = nextLong()
+        this.client = randomClient().toEntity()
+        this.checkInDate = LocalDateTime.now()
+        this.checkOutDate = LocalDateTime.now()
+        this.paymentType = PaymentType.values().random()
+        this.specialRequests = listOf(SpecialRequestType.values().random()).sorted().joinToString(separator = ",")
+        this.promocode = generateRandomLowerCaseLetterString(7)
     }
 }

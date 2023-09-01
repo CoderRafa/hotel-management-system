@@ -10,7 +10,7 @@ data class Consumable(
 )
 
 fun Consumable.toEntity() = ConsumableEntity().apply {
-    this.consumableId == this@toEntity.consumableId
+    this.consumableId = this@toEntity.consumableId
     this.name = this@toEntity.name
     this.cost = this@toEntity.cost
     this.amount = this@toEntity.amount

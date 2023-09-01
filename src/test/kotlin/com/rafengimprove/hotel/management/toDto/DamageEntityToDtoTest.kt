@@ -3,18 +3,17 @@ package com.rafengimprove.hotel.management.toDto
 import com.rafengimprove.hotel.management.system.model.entity.DamageEntity
 import com.rafengimprove.hotel.management.system.model.entity.toDto
 import com.rafengimprove.hotel.management.system.model.type.DamageType
-import com.rafengimprove.hotel.management.system.model.type.DamageType.ROOM_DAMAGE
-import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.RepeatedTest
-import org.junit.jupiter.api.Test
+import org.junit.jupiter.api.extension.ExtendWith
+import org.mockito.junit.jupiter.MockitoExtension
 import kotlin.random.Random.Default.nextDouble
 
+@ExtendWith(MockitoExtension::class)
 class DamageEntityToDtoTest {
 
-    val damageEntity = randomDamageEntity()
-
-    val damage = damageEntity.toDto()
+    private val damageEntity = randomDamageEntity()
+    private val damage = damageEntity.toDto()
 
     @RepeatedTest(15)
     fun `Happy pass - damage toDto works`() {

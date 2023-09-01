@@ -34,15 +34,6 @@ class ApartmentEntity {
 
     @Column(name = "floor", nullable = false)
     var floor: Int = 1
-
-    @Column(name = "has_sea_view", nullable = false)
-    var hasSeaView: Boolean = false
-
-    @Column(name = "apartment_area", nullable = false)
-    var apartmentArea: Double = 0.0
-
-    @Column(name = "has_balcony", nullable = false)
-    var hasBalcony: Boolean = false
 }
 
 fun ApartmentEntity.toDto() = com.rafengimprove.hotel.management.system.model.dto.Apartment(

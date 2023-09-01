@@ -4,14 +4,16 @@ import com.rafengimprove.hotel.management.system.model.entity.ServiceEntity
 import com.rafengimprove.hotel.management.system.model.entity.toDto
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.RepeatedTest
+import org.junit.jupiter.api.extension.ExtendWith
+import org.mockito.junit.jupiter.MockitoExtension
 import kotlin.random.Random.Default.nextDouble
 import kotlin.random.Random.Default.nextInt
 
+@ExtendWith(MockitoExtension::class)
 class ServiceEntityToDtoTest {
 
-    val serviceEntity = randomServiceEntity()
-
-    val service = serviceEntity.toDto()
+    private val serviceEntity = randomServiceEntity()
+    private val service = serviceEntity.toDto()
 
     @RepeatedTest(15)
     fun `Happy pass - serviceEntity toDto works`() {

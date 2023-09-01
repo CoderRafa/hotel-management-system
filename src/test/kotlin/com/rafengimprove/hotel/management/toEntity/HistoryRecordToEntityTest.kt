@@ -1,4 +1,4 @@
-package com.rafengimprove.hotel.management.toentity
+package com.rafengimprove.hotel.management.toEntity
 
 import com.rafengimprove.hotel.management.common.randomClient
 import com.rafengimprove.hotel.management.common.randomService
@@ -8,10 +8,13 @@ import com.rafengimprove.hotel.management.system.model.entity.toDto
 import com.rafengimprove.hotel.management.system.model.type.BehaviourType
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.RepeatedTest
+import org.junit.jupiter.api.extension.ExtendWith
+import org.mockito.junit.jupiter.MockitoExtension
 import java.time.LocalDateTime
 import kotlin.random.Random.Default.nextBoolean
 import kotlin.random.Random.Default.nextLong
 
+@ExtendWith(MockitoExtension::class)
 class HistoryRecordToEntityTest {
 
     private val historyRecord = randomHistoryRecord()
@@ -19,7 +22,6 @@ class HistoryRecordToEntityTest {
 
     @RepeatedTest(15)
     fun `Happy pass - convert historyRecord to entity`() {
-
         assertEquals(historyRecord.historyRecordId, historyRecordEntity.historyRecordId)
         assertEquals(historyRecord.client, historyRecordEntity.client.toDto())
         assertEquals(historyRecord.apartmentPaymentId, historyRecordEntity.apartmentPaymentId)

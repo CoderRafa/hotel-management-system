@@ -4,15 +4,15 @@ import com.rafengimprove.hotel.management.system.model.entity.PositionEntity
 import com.rafengimprove.hotel.management.system.model.entity.toDto
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.RepeatedTest
-import org.junit.jupiter.api.Test
+import org.junit.jupiter.api.extension.ExtendWith
+import org.mockito.junit.jupiter.MockitoExtension
 import kotlin.random.Random.Default.nextDouble
 
+@ExtendWith(MockitoExtension::class)
 class PositionEntityToDtoTest {
 
-    val positionEntity = randomPositionEntity()
-
-
-    val position = positionEntity.toDto()
+    private val positionEntity = randomPositionEntity()
+    private val position = positionEntity.toDto()
 
     @RepeatedTest(15)
     fun `Happy pass - positionEntity toDto works`() {

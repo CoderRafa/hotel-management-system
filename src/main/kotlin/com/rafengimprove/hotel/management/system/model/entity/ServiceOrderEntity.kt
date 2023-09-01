@@ -31,8 +31,6 @@ class ServiceOrderEntity {
     @Column(name = "service_order_date_time", nullable = false)
     lateinit var serviceOrderDateTime: LocalDateTime
 
-    @Column(name = "cost", nullable = false)
-    var cost: Double = 0.0
 }
 
 fun ServiceOrderEntity.toDto() = ServiceOrder(

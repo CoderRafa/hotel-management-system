@@ -1,4 +1,4 @@
-package com.rafengimprove.hotel.management.toentity
+package com.rafengimprove.hotel.management.toEntity
 
 import com.rafengimprove.hotel.management.system.model.dto.Transaction
 import com.rafengimprove.hotel.management.system.model.dto.toEntity
@@ -7,18 +7,20 @@ import com.rafengimprove.hotel.management.system.model.type.PaymentType
 import com.rafengimprove.hotel.management.system.model.type.TransactionStatusType
 import com.rafengimprove.hotel.management.system.model.type.TransactionType
 import org.junit.jupiter.api.Assertions.assertEquals
-import org.junit.jupiter.api.Test
+import org.junit.jupiter.api.RepeatedTest
+import org.junit.jupiter.api.extension.ExtendWith
+import org.mockito.junit.jupiter.MockitoExtension
 import java.time.LocalDateTime
 import kotlin.random.Random.Default.nextDouble
 import kotlin.random.Random.Default.nextLong
 
+@ExtendWith(MockitoExtension::class)
 class TransactionToEntityTest {
 
     private val transaction = randomTransaction()
-
     private val transactionEntity = transaction.toEntity()
 
-    @Test
+    @RepeatedTest(15)
     fun `Happy pass - transaction toEntity works`() {
         assertEquals(transaction.transactionId, transactionEntity.transactionId)
         assertEquals(transaction.transactionType, transactionEntity.transactionType)

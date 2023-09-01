@@ -14,10 +14,10 @@ class ConsumablesPaymentEntity {
     @Column(name = "id", nullable = false)
     var paymentId: Long? = null
 
-    @Column(name = "createdDate", nullable = false)
+    @Column(name = "created_date", nullable = false)
     lateinit var createdDate: LocalDate
 
-    @Column(name = "confirmedDate", nullable = false)
+    @Column(name = "confirmed_date", nullable = false)
     lateinit var confirmedDate: LocalDate
 
     @Column(name = "amount", nullable = false)

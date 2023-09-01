@@ -1,6 +1,7 @@
-package com.rafengimprove.hotel.management.toentity
+package com.rafengimprove.hotel.management.toEntity
 
 import com.rafengimprove.hotel.management.common.randomRoom
+import com.rafengimprove.hotel.management.system.model.dto.Apartment
 import com.rafengimprove.hotel.management.system.model.dto.toEntity
 import com.rafengimprove.hotel.management.system.model.entity.toDto
 import com.rafengimprove.hotel.management.system.model.type.RenovationType
@@ -14,11 +15,11 @@ import kotlin.random.Random.Default.nextInt
 @ExtendWith(MockitoExtension::class)
 class ApartmentToEntityTest {
 
+    private val apartment = randomApartment()
+    private val apartmentEntity = apartment.toEntity()
+
     @RepeatedTest(15)
     internal fun `Happy pass - apartment toEntity works`() {
-        val apartment = randomApartment()
-        val apartmentEntity = apartment.toEntity()
-
         assertEquals(apartment.apartmentId, apartmentEntity.apartmentId)
         assertEquals(apartment.apartmentNumber, apartmentEntity.apartmentNumber)
         assertEquals(apartment.rooms, apartmentEntity.rooms.map { it.toDto() })
@@ -30,7 +31,7 @@ class ApartmentToEntityTest {
         assertEquals(apartment.floor, apartmentEntity.floor)
     }
 
-    private fun randomApartment() = com.rafengimprove.hotel.management.system.model.dto.Apartment(
+    private fun randomApartment() = Apartment(
         null,
         "${nextInt(1, 33)}",
         listOf(randomRoom()),

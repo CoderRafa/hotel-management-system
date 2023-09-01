@@ -2,7 +2,6 @@ package com.rafengimprove.hotel.management.system.model.dto
 
 import com.rafengimprove.hotel.management.common.randomClient
 import com.rafengimprove.hotel.management.system.model.type.BehaviourType
-import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.RepeatedTest
 import org.junit.jupiter.api.extension.ExtendWith

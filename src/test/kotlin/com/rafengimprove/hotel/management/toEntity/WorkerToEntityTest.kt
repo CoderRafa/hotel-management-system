@@ -1,4 +1,4 @@
-package com.rafengimprove.hotel.management.toentity
+package com.rafengimprove.hotel.management.toEntity
 
 import com.rafengimprove.hotel.management.common.generateRandomLowerCaseLetterString
 import com.rafengimprove.hotel.management.common.generateRandomNumberString
@@ -9,9 +9,12 @@ import com.rafengimprove.hotel.management.system.model.dto.toEntity
 import com.rafengimprove.hotel.management.system.model.entity.toDto
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.RepeatedTest
+import org.junit.jupiter.api.extension.ExtendWith
+import org.mockito.junit.jupiter.MockitoExtension
 import java.time.LocalDate
 import kotlin.random.Random.Default.nextLong
 
+@ExtendWith(MockitoExtension::class)
 class WorkerToEntityTest {
 
     @RepeatedTest(15)

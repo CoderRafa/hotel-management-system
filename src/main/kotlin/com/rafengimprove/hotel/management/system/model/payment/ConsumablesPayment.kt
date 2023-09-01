@@ -19,8 +19,7 @@ class ConsumablesPayment(
     val consumables: List<Consumable>
 ) : Payment(
     paymentId, createdDate, confirmedDate, amount, paymentType, currency, status
-) {
-}
+)
 
 fun ConsumablesPayment.toEntity() = ConsumablesPaymentEntity().apply {
     this.paymentId = this@toEntity.paymentId

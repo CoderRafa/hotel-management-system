@@ -1,16 +1,16 @@
-package com.rafengimprove.hotel.management.toentity
+package com.rafengimprove.hotel.management.toEntity
 
-import com.rafengimprove.hotel.management.system.model.dto.Consumable
+import com.rafengimprove.hotel.management.common.randomConsumable
 import com.rafengimprove.hotel.management.system.model.dto.toEntity
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.RepeatedTest
-import kotlin.random.Random.Default.nextDouble
-import kotlin.random.Random.Default.nextInt
+import org.junit.jupiter.api.extension.ExtendWith
+import org.mockito.junit.jupiter.MockitoExtension
 
+@ExtendWith(MockitoExtension::class)
 class ConsumableToEntityTest {
 
     private val consumable = randomConsumable()
-
     private val consumableEntity = consumable.toEntity()
 
     @RepeatedTest(15)
@@ -21,10 +21,5 @@ class ConsumableToEntityTest {
         assertEquals(consumable.amount, consumableEntity.amount)
     }
 
-    private fun randomConsumable() = Consumable(
-        null,
-        "Wine glass",
-        nextDouble(),
-        nextInt()
-    )
+
 }
