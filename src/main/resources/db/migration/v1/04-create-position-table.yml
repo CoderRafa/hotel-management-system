@@ -1,22 +1,23 @@
-- changeSet:
-    id: 04-01
-    author: Rafayel Khachatryan
-    changes:
-      - createTable:
-          columns:
-            - column:
-                constraints:
-                  nullable: false
-                  primaryKey: true
-                  primaryKeyName: pk_position
-                name: id
-                type: BIGINT
-            - column:
-                name: name
-                type: VARCHAR(100)
-            - column:
-                name: base_salary
-                type: double
-          remarks: This is my firs changeSet
-          schemaName: public
-          tableName: position
+databaseChangeLog:
+  - changeSet:
+      id: 04-01
+      author: Rafayel Khachatryan
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_position
+                  name: id
+                  type: BIGINT
+              - column:
+                  name: name
+                  type: VARCHAR(100)
+              - column:
+                  name: base_salary
+                  type: double
+            remarks: This is my firs changeSet
+            schemaName: public
+            tableName: position

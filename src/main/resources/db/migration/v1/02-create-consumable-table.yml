@@ -1,25 +1,26 @@
-- changeSet:
-    id: 02-01
-    author: Rafayel Khachatryan
-    changes:
-      - createTable:
-          columns:
-            - column:
-                constraints:
-                  nullable: false
-                  primaryKey: true
-                  primaryKeyName: pk_consumable
-                name: id
-                type: BIGINT
-            - column:
-                name: name
-                type: varchar(100)
-            - column:
-                name: cost
-                type: double
-            - column:
-                name: amount
-                type: INT
-          remarks: This is my firs changeSet
-          schemaName: public
-          tableName: consumable
+databaseChangeLog:
+  - changeSet:
+      id: 02-01
+      author: Rafayel Khachatryan
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_consumable
+                  name: id
+                  type: BIGINT
+              - column:
+                  name: name
+                  type: varchar(100)
+              - column:
+                  name: cost
+                  type: double
+              - column:
+                  name: amount
+                  type: INT
+            remarks: This is my firs changeSet
+            schemaName: public
+            tableName: consumable

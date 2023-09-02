@@ -1,22 +1,23 @@
-- changeSet:
-    id: 01-01
-    author: Rafayel Khachatryan
-    changes:
-      - createTable:
-          columns:
-            - column:
-                constraints:
-                  nullable: false
-                  primaryKey: true
-                  primaryKeyName: pk_damage
-                name: id
-                type: BIGINT
-            - column:
-                name: damage_type
-                type: varchar(100)
-            - column:
-                name: cost
-                type: double
-          remarks: This is my firs changeSet
-          schemaName: public
-          tableName: damage
+databaseChangeLog:
+  - changeSet:
+      id: 01-01
+      author: Rafayel Khachatryan
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_damage
+                  name: id
+                  type: BIGINT
+              - column:
+                  name: damage_type
+                  type: varchar(100)
+              - column:
+                  name: cost
+                  type: double
+            remarks: This is my firs changeSet
+            schemaName: public
+            tableName: damage

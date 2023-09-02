@@ -1,25 +1,26 @@
-- changeSet:
-    id: 05-01
-    author: Rafayel Khachatryan
-    changes:
-      - createTable:
-          columns:
-            - column:
-                constraints:
-                  nullable: false
-                  primaryKey: true
-                  primaryKeyName: pk_service
-                name: id
-                type: BIGINT
-            - column:
-                name: service_name
-                type: VARCHAR(100)
-            - column:
-                name: cost
-                type: double
-            - column:
-                name: amount
-                type: INT
-          remarks: This is my firs changeSet
-          schemaName: public
-          tableName: service
+databaseChangeLog:
+  - changeSet:
+      id: 05-01
+      author: Rafayel Khachatryan
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_service
+                  name: id
+                  type: BIGINT
+              - column:
+                  name: service_name
+                  type: VARCHAR(100)
+              - column:
+                  name: cost
+                  type: double
+              - column:
+                  name: amount
+                  type: INT
+            remarks: This is my firs changeSet
+            schemaName: public
+            tableName: service
